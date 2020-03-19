@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+     .header{
+        width: 100%;
+        height: 50px;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 5px;
+    }
+    .header h1{
+        font-size: large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: coral;
+    }
+    .kiri{
+        margin-top: 100px;
+        width:70%;
+        height: 100%;
+        float: left;
+        background-color:salmon;
+    }
+    .kanan{
+        margin-top: 100px;
+        width:30%;
+        height: 100%;
+        float: left;
+        background-color:rgba(235, 40, 18, 0.911);
+    }
+    .kotak{
+        width: 200px;
+        height: 300px;
+        margin: 5px 5px 5px 5px;
+    
+        float: left;
+        background-size: 80px 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    </style>
+
+</head>
+
+
+<body>
+<div class="header">
+    <h1>Hello Guys</h1>
+</div>
+<div class="kiri">
+    <div class="kotak">
+        <img src="gambar1.jpg" width="200px">
+        <h4>HARGA : RP 50.000</h4>
+        <button class="sukses">Beli</button>
+    </div>
+    <div class="kotak">
+        <img src="gambar1.jpg" width="200px">
+        <h4>HARGA : RP 60.000</h4>
+        <button class="sukses">Beli</button>
+    </div>
+    <div class="kotak">
+        <img src="gambar1.jpg" width="200px">
+        <h4>HARGA : RP 70.000</h4>
+        <button class="sukses">Beli</button>
+    </div>
+    <div class="kotak">
+        <img src="gambar1.jpg" width="200px">
+        <h4>HARGA : RP 80.000</h4>
+        <button class="sukses">Beli</button>
+    </div>
+</div>
+
+<div class="kanan">
+    <h1>Keranjang Belanja</h1>
+</div>
+
+
+<script>
+    var vm=new({
+        el: '#container',
+        data:{
+            motor:[
+                {merek:'supra',harga:5500000,image:'motor1.jpg'},
+                {merek:'mio',harga:3400000,image:'motor2.jpg'},
+                {merek:'nmax',harga:7500000,image:'motor3.jpg'},
+                {merek:'shogun',harga:9500000,image:'motor4.jpg'},
+                {merek:'vario',harga:8500000,image:'motor5.jpg'}            ]
+        ],
+        keranjangharga :[],
+        keranjangmerek :[],
+    },
+    methods:{
+        addCart:function(merek) {
+            this.keranjangmerek.push(merek);
+        },
+        removeCart:function(index){
+            this.keranjangmerek.splice(index,1)
+            this.keranjangharga.splice(index,1)
+        }
+            
+        }
+    })
+</script>
+    
+</body>
+</html>

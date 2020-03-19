@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+*/
+    
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    .display{
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        padding: 100px;
+    }
+
+    .display2{
+        height: 10%;
+        width: 80%;
+        overflow: auto;
+        background-color: rgba(240, 191, 128, 0.733);
+        margin: auto;
+    }
+
+    .display3{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(222, 184, 135, 0.288);
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+    }
+
+
+    </style>
+<body>
+
+    <div class="display" id="display">
+        <div class="display2">
+            <h3> Isi Kotak <button id="btn" style="float: right;" onclick="tutup()">X</button></h3>
+        </div>
+    </div>
+        <h1>Contoh Modal</h1>
+        <button id="tambah" onclick="tambahdata()">Tambah Data Baru</button>
+    
+
+   <script>
+       function tambahdata(){
+           document.getElementById('display').className="display3";
+       }
+
+       function tutup(){
+           document.getElementById('display').className="display";
+       }
+
+       </script>
+    
+</body>
+</html>

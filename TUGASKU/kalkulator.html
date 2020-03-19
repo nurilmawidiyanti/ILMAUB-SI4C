@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.container{
+    border: 2px solid black;
+    background-color: rgba(233, 219, 90, 0.719);
+    width: 400px;
+    height: 350px;
+    margin:auto;
+    position: relative;
+    
+}
+
+.judul{
+   
+    text-align: center;
+    font-family: Arial;
+   
+   
+}
+
+
+.isian1{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    background-color: darkgoldenrod;
+    padding: 10px 20px 10px 20px;
+    margin: 30px 30px;
+    border-radius: 10px;
+   
+}
+.isian2{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    background-color: darkgoldenrod;
+    margin: 30px 30px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+   
+}
+.button{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    background-color:yellow;
+
+   
+}
+
+
+</style>
+</head>
+<script>
+
+    function operasitambah(){
+
+        var bilangan1=document.getElementById("bil1").value;
+        var bilangan2=document.getElementById("bil2").value;
+        var bil1=Number(bilangan1);
+        var bil2=Number(bilangan2);
+        var hasil=bil1+bil2;
+
+        document.getElementById("hasiltext").innerHTML=hasil;
+
+    }
+
+    function operasikurang(){
+
+        var bilangan1=document.getElementById("bil1").value;
+        var bilangan2=document.getElementById("bil2").value;
+        var bil1=Number(bilangan1);
+        var bil2=Number(bilangan2);
+        var hasil=bil1-bil2;
+
+        document.getElementById("hasiltext").innerHTML=hasil;
+
+        }
+
+        function operasikali(){
+
+        var bilangan1=document.getElementById("bil1").value;
+        var bilangan2=document.getElementById("bil2").value;
+        var bil1=Number(bilangan1);
+        var bil2=Number(bilangan2);
+        var hasil=bil1*bil2;
+
+        document.getElementById("hasiltext").innerHTML=hasil;
+
+        }
+
+        function operasibagi(){
+
+        var bilangan1=document.getElementById("bil1").value;
+        var bilangan2=document.getElementById("bil2").value;
+        var bil1=Number(bilangan1);
+        var bil2=Number(bilangan2);
+        var hasil=bil1/bil2;
+
+        document.getElementById("hasiltext").innerHTML=hasil;
+
+        }
+
+
+    </script>
+<body>
+
+       
+       
+
+        <div class="container" id="konten">
+            <div class="judul">
+                <h2 class="judulatas">Kalkulator Javascript</h2>
+            </div>
+            <div class="isian1">
+                <input type="text" id="bil1"/>
+            </div>
+            <div class="isian2">
+                <input type="text" id="bil2"/>
+            </div>
+            <div class="button">
+                <br>
+                <input type="button"  onclick="operasitambah()" value="TAMBAH"></input>
+                <input type="button"  onclick="operasikurang()" value="KURANG"></input>
+                <input type="button"  onclick="operasikali()" value="KALI"></input>
+                <input type="button"  onclick="operasibagi()" value="BAGI"></input>
+                <br>
+            </div>
+            <div class="hasil">
+                <center>
+                    <h1 id="hasiltext">56</h1>
+                    </center>
+                   
+                    
+            </div>
+
+        </div>
+
+
+        
+       
+    
+</body>
+</html>
