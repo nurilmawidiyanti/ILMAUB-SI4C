@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <script src="vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
 .header{
     height: 50px;
@@ -170,13 +171,14 @@ Harga : {{motorku.harga}}
     var vm = new Vue({   
              el: '#container',
              data: {
-                 motor:[
-                     {merek:'supra',harga:5500000,image:'https://cdn0-production-images-kly.akamaized.net/QbYVo9CS2CJxhhhFQJMnDmLQ4q4=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2747152/original/088219600_1552155797-AHM_Honda_Supra_X_125_FI._06_.jpg'}
-                     ,{merek:'mio',harga:3400000,image:'https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Yamaha_Mio/Yamaha_Mio_L_1.jpg'}
-                     ,{merek:'NMax',harga:2500000,image:'https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Yamaha_NMAX_2018/Yamaha_NMAX_2018_L_1.jpg'}
-                     ,{merek:'Shogun',harga:3400000, image:'https://d2pa5gi5n2e1an.cloudfront.net/webp/global/images/product/motorcycle/Suzuki_Shogun_Axelo125/Suzuki_Shogun_Axelo125_L_1.jpg'}
-                     ,{merek:'Satria',harga:1400000,image:'https://www.suzuki.co.id//assets/static/img/variant/Satria-WhiteBlue.png'}
-                 ],
+                //  motor:[
+                //      {merek:'supra',harga:5500000,image:'https://cdn0-production-images-kly.akamaized.net/QbYVo9CS2CJxhhhFQJMnDmLQ4q4=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2747152/original/088219600_1552155797-AHM_Honda_Supra_X_125_FI._06_.jpg'}
+                //      ,{merek:'mio',harga:3400000,image:'https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Yamaha_Mio/Yamaha_Mio_L_1.jpg'}
+                //      ,{merek:'NMax',harga:2500000,image:'https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/motorcycle/Yamaha_NMAX_2018/Yamaha_NMAX_2018_L_1.jpg'}
+                //      ,{merek:'Shogun',harga:3400000, image:'https://d2pa5gi5n2e1an.cloudfront.net/webp/global/images/product/motorcycle/Suzuki_Shogun_Axelo125/Suzuki_Shogun_Axelo125_L_1.jpg'}
+                //      ,{merek:'Satria',harga:1400000,image:'https://www.suzuki.co.id//assets/static/img/variant/Satria-WhiteBlue.png'}
+                //  ],
+                 motor:[],
                  keranjanggambar:[],
                  keranjangmerek:[],
                  keranjangharga:[],
@@ -208,9 +210,36 @@ Harga : {{motorku.harga}}
                      this.keranjangharga.splice(index,1)
                      this.qty-=1;
 
-                     
-                 
-                 }
+
+                },
+
+upDate: function() {
+
+   axios.get('https://my-json-server.typicode.com/nurilmawidiyanti/restapiserver/db').then(response => this.motor=response.data['produk'])
+}
+
+
+}   ,
+
+mounted() {
+// axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => console.log(response));
+
+this.upDate();
+this.timer = setInterval(this.upDate, 1000)
+
+
+// axios.get('https://my-json-server.typicode.com/nurilmawidiyanti/restapiserver/db').then(response => this.motor=response.data['produk']);
+}
+
+
+})
+
+</script>
+
+
+
+
+
              }    
         })
     
